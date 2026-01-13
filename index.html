@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specter Evidence Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-grid">
+        
+        <div class="column ghost-column">
+            <div class="header">GHOSTS</div>
+            <div id="ghost-container">
+                </div>
+        </div>
+
+        <div class="column controls-column">
+            <div class="header">JOURNAL</div>
+            
+            <div class="control-group">
+                <h3>Evidence</h3>
+                <div id="evidence-list">
+                    </div>
+                <button id="reset-btn" onclick="resetAll()">Reset Journal</button>
+            </div>
+
+            <div class="control-group">
+                <h3>Ghost Trait (Click: Select / Dbl-Click: Exclude)</h3>
+                <div class="filter-buttons" id="trait-filters">
+                    <button onclick="setTrait('Tormentor', this)" ondblclick="excludeTrait('Tormentor', this)">Tormentor</button>
+                    <button onclick="setTrait('Flicker', this)" ondblclick="excludeTrait('Flicker', this)">Flicker</button>
+                    <button onclick="setTrait('Trickster', this)" ondblclick="excludeTrait('Trickster', this)">Trickster</button>
+                    <button onclick="setTrait('Imitator', this)" ondblclick="excludeTrait('Imitator', this)">Imitator</button>
+                    <button onclick="setTrait('Leech', this)" ondblclick="excludeTrait('Leech', this)">Leech</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Ghost Speed</h3>
+                <div class="filter-buttons" id="speed-filters">
+                    <button onclick="setSpeed('Slow', this)">Slow</button>
+                    <button onclick="setSpeed('Normal', this)">Normal</button>
+                    <button onclick="setSpeed('Fast', this)">Fast</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="column info-column">
+            <div class="header">INFORMATION</div>
+            <div id="info-container">
+                <div class="placeholder-text">Filter ghosts to see their abilities here.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
